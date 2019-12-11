@@ -45,7 +45,7 @@ def addTracks(playlistId, uris, hs):
 if __name__ == "__main__":
 
     headers = {
-        'authorization': "Bearer " + "BQCAc2pLZEiVD_Ot0fGCQ6g0DROxwwcYWHuz4N0U1fdFEkhDliy6VsY2wameFx-kMv0sNqVSOorIOo3_e2Pg15E5NlPmIh5OXnvb5ucCy5-7uB2mK4fbNexqhGCJzyFdVdJCQifcY00grm2LfXRRPjdford0e1YX4sJyJH85AOfqaTDhe33wAjP6t5H0S4azFUQ8H3ftVemfi58TJiHKj57zl85QDd8hQQNZbZnXPD678Sr_Ke-v44178Z7OTVuO3IiYsYDBHGlf",
+        'authorization': "Bearer " + "your-token-here",
         'content-type': "application/json",
     }
 

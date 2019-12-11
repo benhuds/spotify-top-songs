@@ -17,14 +17,14 @@ Here's a way to obtain one through the Spotify Web API docs:
 1. Go to [this page](https://developer.spotify.com/documentation/web-api/reference/personalization/get-users-top-artists-and-tracks/).
 2. Click "Try it" under the ***Examples*** section.
 
-<img src='/img/tryit.png' width=200)
+<img src="/img/tryit.png" width="200">
 
 3. Log into your Spotify account, if prompted.
 
 Once you've entered your Spotify credentials, you should see your OAuth token
 under the "OAuth Token" field:
 
-<img src='/img/oauth.png' width=200)
+<img src="/img/oauth.png" width="200">
 
 Paste this token into the `token` variable in the `buildplaylist.py` script and
 run the script.  Restart your Spotify app and you should see your new playlist

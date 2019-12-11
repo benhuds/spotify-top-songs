@@ -17,7 +17,7 @@ Here's a way to obtain one through the Spotify Web API docs:
 1. Go to [this page](https://developer.spotify.com/documentation/web-api/reference/personalization/get-users-top-artists-and-tracks/).
 2. Click "Try it" under the ***Examples*** section.
 
-<img src="/img/tryit.png" width="500">
+<img src="/img/tryit.png" width="300">
 
 3. Log into your Spotify account, if prompted.
 

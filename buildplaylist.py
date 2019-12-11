@@ -65,7 +65,7 @@ def addTracks(playlistId, uris, token):
 
 if __name__ == "__main__":
 
-    token = ""
+    token = "your-token-here"
 
     # Create playlist
     playlistName = "Your Top Songs of the Decade"

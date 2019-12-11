@@ -10,17 +10,23 @@ As an alternative, I looked into ways to create it myself using the [Spotify
 Web API](https://developer.spotify.com/documentation/web-api/), and found
 [some](https://developer.spotify.com/documentation/web-api/reference/personalization/get-users-top-artists-and-tracks)
 [useful](https://developer.spotify.com/documentation/web-api/reference/playlists/add-tracks-to-playlist/)
-[pages](https://developer.spotify.com/documentation/web-api/reference/playlists/create-playlist/).
+[documentation](https://developer.spotify.com/documentation/web-api/reference/playlists/create-playlist/).
 
 If you'd like to run this script yourself, you need a Spotify OAuth token.
 Here's a way to obtain one through the Spotify Web API docs:
 1. Go to [this page](https://developer.spotify.com/documentation/web-api/reference/personalization/get-users-top-artists-and-tracks/).
 2. Click "Try it" under the ***Examples*** section.
+
+![alt text](/img/tryit.png)
+
 3. Log into your Spotify account, if prompted.
 
 Once you've entered your Spotify credentials, you should see your OAuth token
-under the "OAuth Token" field.  Paste this token into the `token` variable in
-the `buildplaylist.py` script and run the script.  Restart your Spotify app and
-you should see your new playlist containing your 100 most popular songs on
-Spotify!
+under the "OAuth Token" field:
+
+![alt text](/img/oauth.png)
+
+Paste this token into the `token` variable in the `buildplaylist.py` script and
+run the script.  Restart your Spotify app and you should see your new playlist
+containing your 100 most popular songs on Spotify!
 

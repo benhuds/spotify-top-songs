@@ -19,11 +19,9 @@ def createPlaylist(name, hs):
 
     createPlaylistUrl = "https://api.spotify.com/v1/me/playlists"
 
-    playlistParams = {"name": name}
-
     try:
         print "Creating playlist named: " + name
-        r = requests.post(createPlaylistUrl, headers=hs, allow_redirects=False, data=json.dumps(playlistParams))
+        r = requests.post(createPlaylistUrl, headers=hs, allow_redirects=False, data=json.dumps({"name": name}))
         playlistId = r.json()['id']
         print "Success! Created playlist with ID " + playlistId
         return playlistId
@@ -35,11 +33,9 @@ def addTracks(playlistId, uris, hs):
         
     addTracksUrl = "https://api.spotify.com/v1/playlists/" + playlistId + "/tracks"
 
-    trackParams = {"uris": uris}
-
     try:
         print "Adding tracks to playlist..."
-        r = requests.post(addTracksUrl, headers=hs, allow_redirects=False, data=json.dumps(trackParams))
+        r = requests.post(addTracksUrl, headers=hs, allow_redirects=False, data=json.dumps({"uris": uris}))
         print "Success! Added " + str(len(uris)) + " tracks to playlist " + playlistId
         return
 
@@ -49,7 +45,7 @@ def addTracks(playlistId, uris, hs):
 if __name__ == "__main__":
 
     headers = {
-        'authorization': "Bearer " + "your-token-here",
+        'authorization': "Bearer " + "BQCAc2pLZEiVD_Ot0fGCQ6g0DROxwwcYWHuz4N0U1fdFEkhDliy6VsY2wameFx-kMv0sNqVSOorIOo3_e2Pg15E5NlPmIh5OXnvb5ucCy5-7uB2mK4fbNexqhGCJzyFdVdJCQifcY00grm2LfXRRPjdford0e1YX4sJyJH85AOfqaTDhe33wAjP6t5H0S4azFUQ8H3ftVemfi58TJiHKj57zl85QDd8hQQNZbZnXPD678Sr_Ke-v44178Z7OTVuO3IiYsYDBHGlf",
         'content-type': "application/json",
     }
 
@@ -57,11 +53,7 @@ if __name__ == "__main__":
     playlistName = "Your Top Songs of the Decade"
     playlist = createPlaylist(playlistName, headers)
 
-    # Get your top 100 songs
-    uri1 = getTopSongs(0, headers)
-    uri2 = getTopSongs(49, headers)
-
-    # Add the tracks to the playlist you just created
-    addTracks(playlist, uri1, headers)
-    addTracks(playlist, uri2, headers)
+    # Add your top 100 tracks to the playlist you just created
+    addTracks(playlist, getTopSongs(0, headers), headers)
+    addTracks(playlist, getTopSongs(49, headers), headers)
 

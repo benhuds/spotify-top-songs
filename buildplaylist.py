@@ -5,14 +5,15 @@ def getTopSongs(offset, hs):
 
     topSongsUrl = "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50&offset=" + str(offset)
 
-    r = requests.get(topSongsUrl, headers=hs, allow_redirects=False)
+    try:
+        r = requests.get(topSongsUrl, headers=hs, allow_redirects=False)
+        uriList = []
+        for i in r.json()['items']:
+            uriList.append(i['uri'])
+        return uriList
 
-    uriList = []
-
-    for i in r.json()['items']:
-        uriList.append(i['uri'])
-
-    return uriList
+    except:
+        print "Failed with status code: " + str(r.status_code)
 
 def createPlaylist(name, hs):
 
@@ -25,11 +26,10 @@ def createPlaylist(name, hs):
         r = requests.post(createPlaylistUrl, headers=hs, allow_redirects=False, data=json.dumps(playlistParams))
         playlistId = r.json()['id']
         print "Success! Created playlist with ID " + playlistId
+        return playlistId
 
     except:
         print "Failed with status code: " + str(r.status_code)
-
-    return playlistId
 
 def addTracks(playlistId, uris, hs):
         
@@ -41,11 +41,10 @@ def addTracks(playlistId, uris, hs):
         print "Adding tracks to playlist..."
         r = requests.post(addTracksUrl, headers=hs, allow_redirects=False, data=json.dumps(trackParams))
         print "Success! Added " + str(len(uris)) + " tracks to playlist " + playlistId
+        return
 
     except:
         print "Failed with status code: " + r.status_code
-
-    return
 
 if __name__ == "__main__":
 

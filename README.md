@@ -26,7 +26,8 @@ under the "OAuth Token" field:
 
 <img src="/img/oauth.png" width="500">
 
-Paste this token into the `token` variable in the `buildplaylist.py` script and
-run the script.  Restart your Spotify app and you should see your new playlist
-containing your 100 most popular songs on Spotify!
+Replace `your-token-here` in the `buildplaylist.py` script with the token you
+just obtained, and run the `buildplaylist.py` script. Restart your Spotify app
+and you should see a new playlist containing your 100 most popular songs on
+Spotify!
 

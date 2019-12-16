@@ -11,6 +11,9 @@ Web API](https://developer.spotify.com/documentation/web-api/), and found
 [some](https://developer.spotify.com/documentation/web-api/reference/personalization/get-users-top-artists-and-tracks)
 [useful](https://developer.spotify.com/documentation/web-api/reference/playlists/add-tracks-to-playlist/)
 [documentation](https://developer.spotify.com/documentation/web-api/reference/playlists/create-playlist/).
+I didn't get exactly what I was looking for because the "Top Tracks"
+functionality doesn't go back through your *entire* Spotify history, but it
+does cover several years of usage, still makes for a pretty good playlist.
 
 If you'd like to run this script yourself, you need a Spotify OAuth token.
 Here's a way to obtain one through the Spotify Web API docs:
